@@ -1,0 +1,35 @@
+<div *ngIf="resume; else loading">
+
+  <h1 class="h2">
+    {{ resume.introduction.name }}
+  </h1>
+
+  <p class="lead">
+    {{ resume.introduction.job_title }}
+  </p>
+
+  <p>
+    {{ resume.introduction.preamble }}
+  </p>
+
+  <p>
+    <a [attr.href]="'mailto:' + resume.introduction.mail">
+      {{ resume.introduction.mail }}
+    </a>
+  </p>
+
+  <p class="social">
+    <ng-container *ngFor="let s of resume.introduction.social_media; trackBy: trackByLink">
+      <a [attr.href]="s.link" [attr.title]="s.name" [attr.class]="'fab ' + s.icon" target="_blank" tabindex="0"></a>
+    </ng-container>
+  </p>
+
+  <p>
+    <small>Built using <a href="https://angular.io/" target="_blank">Angular</a>, <a href="https://github.com/ngrx/platform" target="_blank">NgRx</a>, and <a href="http://reactivex.io/" target="_blank">RxJS</a>. See the <a href="https://github.com/mpezzi/resume" target="_blank">code</a>.</small>
+  </p>
+
+</div>
+
+<ng-template #loading>
+  Loading ...
+</ng-template>

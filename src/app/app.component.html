@@ -1,0 +1,74 @@
+<div @blockInitialRenderAnimation>
+
+  <div class="container-fluid" *ngIf="resume$ | async; else loading" [@fadeInOut]="'in'">
+
+    <div class="row">
+
+      <div class="app__aside col-md-4">
+
+        <div class="app__aside__inner">
+
+          <section class="section-nav">
+
+            <app-nav>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" tabindex="0">
+                  About
+                </a>
+              </li>
+            </app-nav>
+
+          </section>
+
+          <section class="section-pic">
+
+            <img src="/assets/images/profile.jpg" alt="Michael Pezzi" class="profile rounded-circle">
+
+          </section>
+
+          <section class="section-bio">
+
+            <app-intro-container></app-intro-container>
+
+          </section>
+
+        </div>
+
+      </div>
+
+      <div class="app__content col-md-8">
+
+        <div class="app__content__inner">
+          <router-outlet></router-outlet>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #loading>
+
+    <div class="app__loader" [@fadeInOut]="'in'">
+
+      <div>
+
+        <div class="sk-folding-cube">
+          <div class="sk-cube1 sk-cube"></div>
+          <div class="sk-cube2 sk-cube"></div>
+          <div class="sk-cube4 sk-cube"></div>
+          <div class="sk-cube3 sk-cube"></div>
+        </div>
+
+        <p>
+          Preparing
+        </p>
+
+      </div>
+
+    </div>
+
+  </ng-template>
+
+</div>

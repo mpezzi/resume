@@ -1,0 +1,125 @@
+<div *ngIf="resume; else loading" @blockInitialRenderAnimation>
+
+  <section>
+
+    <app-nav theme="light">
+      <li class="nav-item" *ngFor="let y of years; trackBy: trackByYear">
+        <a class="nav-link" (click)="update.emit(y)" [class.active]="selectedYear === y" tabindex="0">
+          {{ y }}
+        </a>
+      </li>
+    </app-nav>
+
+  </section>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-md-8">
+
+        <section>
+
+          <h2 class="header" id="experience">
+            Experience
+          </h2>
+
+          <article *ngFor="let experience of resume.experiences; trackBy: trackByUuid" [@slideInOut]="'in'">
+
+            <h4>
+              {{ experience.job }}
+            </h4>
+
+            <p class="lead">
+              {{ experience.company }} <span class="text-muted"> / {{ experience.duration }}</span>
+            </p>
+
+            <p>
+              {{ experience.description }}
+            </p>
+
+            <ul>
+              <li *ngFor="let highlight of experience.highlights">
+                {{ highlight }}
+              </li>
+            </ul>
+
+          </article>
+
+        </section>
+
+        <section>
+
+          <h2 class="header" id="education">
+            Education
+          </h2>
+
+          <article *ngFor="let education of resume.educations; trackBy: trackByUuid" [@slideInOut]="'in'">
+
+            <h4>
+              {{ education.school }}
+            </h4>
+
+            <p class="lead">
+              {{ education.course }} <span class="text-muted"> / {{ education.duration }}</span>
+            </p>
+
+            <p>
+              {{ education.description }}
+            </p>
+
+          </article>
+
+        </section>
+
+        <section>
+
+          <h2 class="header" id="references">
+            References
+          </h2>
+
+          <p>
+            Available upon request.
+          </p>
+
+        </section>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <section class="clearfix">
+
+          <h2 class="header" id="skills">
+            Skills
+          </h2>
+
+          <span *ngFor="let skill of resume.skills; trackBy: trackByUuid" class="badge badge-pill badge-secondary" [@fadeInOut]="'in'">
+            {{ skill.label }}
+          </span>
+
+        </section>
+
+        <section class="clearfix">
+
+          <h2 class="header" id="interests">
+            Interests
+          </h2>
+
+          <span *ngFor="let interest of resume.interests; trackBy: trackByUuid" class="badge badge-pill badge-secondary" [@fadeInOut]="'in'">
+            {{ interest.label }}
+          </span>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #loading>
+  Loading ...
+</ng-template>
