@@ -1,7 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Resume } from './interfaces';
 import { ResumeActions } from './stores/actions';
 import * as fromSelectors from './stores/selectors';
@@ -40,6 +42,7 @@ export class AppComponent implements OnInit {
    */
   constructor(
     private store: Store<any>,
+    private title: Title,
   ) { }
 
   /**
@@ -47,7 +50,9 @@ export class AppComponent implements OnInit {
    */
   ngOnInit() {
 
-    this.resume$ = this.store.pipe(select(fromSelectors.selectResume));
+    this.resume$ = this.store.pipe(select(fromSelectors.selectResume)).pipe(
+      tap((resume) => resume ? this.title.setTitle(`${resume.introduction.name} | ${resume.introduction.job_title}`) : null),
+    );
 
     this.activate();
 
