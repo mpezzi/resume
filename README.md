@@ -107,13 +107,3 @@ This project showcases the following libraries:
 }
 
 ```
-
-## Libraries
-
-This project showcases the following libraries:
-
-* [Angular](https://github.com/angular/angular)
-* [Angular CLI](https://github.com/angular/angular-cli)
-* [NgRX Store](https://github.com/ngrx/platform/blob/master/docs/store/README.md)
-* [NgRX Effects](https://github.com/ngrx/platform/blob/master/docs/effects/README.md)
-* [RxJS](https://github.com/ReactiveX/rxjs)
