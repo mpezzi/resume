@@ -14,8 +14,6 @@ import { components } from './components';
 import { containers } from './containers';
 import { effects } from './stores/effects';
 import { reducers } from './stores/reducers';
-import { IntroComponent } from './components/intro/intro.component';
-import { IntroContainerComponent } from './containers/intro-container/intro-container.component';
 
 @NgModule({
   imports: [
@@ -39,11 +37,12 @@ import { IntroContainerComponent } from './containers/intro-container/intro-cont
 
   ],
   declarations: [
+
+    AppComponent,
+
     ...components,
     ...containers,
-    AppComponent,
-    IntroComponent,
-    IntroContainerComponent,
+
   ],
   providers: [],
   bootstrap: [
