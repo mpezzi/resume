@@ -1,0 +1,88 @@
+@resume-container-primary-width: 400px;
+@resume-container-aside-width: 200px;
+
+.resume-container {
+  position: relative;
+}
+
+.resume-container__primary,
+.resume-container__secondary {
+  padding: 24px;
+}
+
+.resume-container__loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #427AA1;
+  color: #ffffff;
+}
+
+@media screen {
+
+  .resume-container__primary {
+    background-color: #427AA1;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .resume-container {
+    padding-left: @resume-container-primary-width;
+  }
+
+  .resume-container__primary,
+  .resume-container__secondary {
+    padding: 36px;
+  }
+
+  .resume-container__primary {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: @resume-container-primary-width;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .resume-container__secondary__body {
+    display: flex;
+  }
+
+  .resume-container__secondary__body__content {
+    flex: auto;
+  }
+
+  .resume-container__secondary__body__aside {
+    flex: none;
+    width: @resume-container-aside-width;
+    margin-left: 36px;
+  }
+
+  .resume-container__secondary__body__aside__inner {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 36px;
+  }
+
+}
+
+@media print {
+
+  app-resume-menu,
+  app-resume-filter-year {
+    display: none;
+  }
+
+}

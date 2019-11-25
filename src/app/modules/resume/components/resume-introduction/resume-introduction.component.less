@@ -1,0 +1,68 @@
+.resume-introduction a {
+  text-decoration: underline;
+}
+
+.resume-introduction__social a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+@media screen {
+
+  .resume-introduction,
+  .resume-introduction a {
+    color: #ffffff;
+  }
+
+  .resume-introduction img {
+    max-width: 50%;
+    margin-bottom: 36px;
+    border: 6px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 100px -30px rgba(0,0,0,0.75);
+  }
+
+  .resume-introduction__preamble {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+  }
+
+  .resume-introduction__social {
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .resume-introduction img {
+    max-width: 100%;
+  }
+
+}
+
+@media print {
+
+  .resume-introduction img {
+    display: none;
+  }
+
+  .resume-introduction__primary {
+    position: relative;
+  }
+
+  .resume-introduction__secondary {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    text-align: right;
+  }
+
+  .resume-introduction__social {
+    margin: 0 0 12px 0;
+  }
+
+}

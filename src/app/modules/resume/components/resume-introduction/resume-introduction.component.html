@@ -1,0 +1,41 @@
+<section class="resume-introduction mb-0">
+
+  <div class="resume-introduction__primary">
+
+    <img [src]="introduction.image" [attr.alt]="introduction.name" />
+
+    <h1 data-test-id="name">
+      {{ introduction.name }}
+    </h1>
+
+    <p class="lead" data-test-id="job_title">
+      {{ introduction.job_title }}
+    </p>
+
+    <p class="resume-introduction__preamble" data-test-id="preamble">
+      {{ introduction.preamble }}
+    </p>
+
+    <p>
+      <a [attr.href]="'mailto:' + introduction.mail" data-test-id="mail">
+        {{ introduction.mail }}
+      </a>
+    </p>
+
+  </div>
+
+  <div class="resume-introduction__secondary">
+
+    <ul class="resume-introduction__social list-inline">
+      <li class="list-inline-item" *ngFor="let s of introduction.social_media; trackBy: trackByLink" data-test-id="social_media">
+        <a [attr.href]="s.link" [attr.title]="s.name" [attr.class]="'fab ' + s.icon" target="_blank" tabindex="0" data-test-id="social_media_link"></a>
+      </li>
+    </ul>
+
+    <p class="mb-0">
+      <small>Built using <a href="https://angular.io" target="_blank">Angular</a>, <a href="https://ngrx.io" target="_blank">NgRx</a>, and <a href="http://reactivex.io" target="_blank">RxJS</a>. See the <a href="https://github.com/mpezzi/resume" target="_blank">code</a>.</small>
+    </p>
+
+  </div>
+
+</section>
