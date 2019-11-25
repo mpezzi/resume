@@ -1,0 +1,11 @@
+<section class="resume-experience-list">
+
+  <h2 id="experience" data-test-id="title">
+    Experience
+  </h2>
+
+  <div class="item" *ngFor="let i of items; trackBy: trackByUuid" [@slideInOut]="'in'" data-test-id="experience">
+    <app-resume-experience [experience]="i"></app-resume-experience>
+  </div>
+
+</section>

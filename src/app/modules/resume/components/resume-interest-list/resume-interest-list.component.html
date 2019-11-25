@@ -1,0 +1,13 @@
+<section class="resume-interest-list">
+
+  <h2 id="interests" data-test-id="title">
+    Interests
+  </h2>
+
+  <ul class="list-inline">
+    <li class="list-inline-item" *ngFor="let i of items; trackBy: trackByUuid" [@scaleFadeInOut]="'in'" data-test-id="interest">
+      <app-resume-interest [interest]="i"></app-resume-interest>
+    </li>
+  </ul>
+
+</section>

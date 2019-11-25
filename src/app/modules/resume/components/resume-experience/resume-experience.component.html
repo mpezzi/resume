@@ -1,0 +1,21 @@
+<article class="resume-experience">
+
+  <h3 data-test-id="title">
+    {{ experience.job }}
+  </h3>
+
+  <p class="lead" data-test-id="lead">
+    {{ experience.company }} <span class="text-muted">/ {{ experience.duration }}</span>
+  </p>
+
+  <p data-test-id="description">
+    {{ experience.description }}
+  </p>
+
+  <ul>
+    <li *ngFor="let highlight of experience.highlights" data-test-id="highlight">
+      {{ highlight }}
+    </li>
+  </ul>
+
+</article>

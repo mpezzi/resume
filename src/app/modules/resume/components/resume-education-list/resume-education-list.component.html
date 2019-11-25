@@ -1,0 +1,11 @@
+<section class="resume-education-list">
+
+  <h2 id="education" data-test-id="title">
+    Education
+  </h2>
+
+  <div class="item" *ngFor="let i of items; trackBy: trackByUuid" [@slideInOut]="'in'" data-test-id="education">
+    <app-resume-education [education]="i"></app-resume-education>
+  </div>
+
+</section>

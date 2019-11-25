@@ -1,0 +1,82 @@
+<div class="resume-container" *ngIf="resume$ | async; else loader" [@fadeInOut]="'in'" @blockInitialRenderAnimation>
+
+  <div class="resume-container__primary">
+
+    <app-resume-menu>
+
+    </app-resume-menu>
+
+    <app-resume-introduction
+      [introduction]="introduction$ | async">
+    </app-resume-introduction>
+
+  </div>
+
+  <div class="resume-container__secondary">
+
+    <div class="resume-container__secondary__header">
+
+      <app-resume-filter-year
+        [activeYear]="year$ | async"
+        (changeYear)="handleChangeYear($event)">
+      </app-resume-filter-year>
+
+    </div>
+
+    <div class="resume-container__secondary__body">
+
+      <div class="resume-container__secondary__body__content">
+
+        <app-resume-experience-list
+          [items]="experience$ | async">
+        </app-resume-experience-list>
+
+        <app-resume-education-list
+          [items]="education$ | async">
+        </app-resume-education-list>
+
+        <app-resume-reference-list>
+
+        </app-resume-reference-list>
+
+      </div>
+
+      <div class="resume-container__secondary__body__aside">
+
+        <div class="resume-container__secondary__body__aside__inner">
+
+          <app-resume-skill-list
+            [items]="skill$ | async">
+          </app-resume-skill-list>
+
+          <app-resume-interest-list
+            [items]="interest$ | async">
+          </app-resume-interest-list>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #loader>
+
+  <div class="resume-container__loader" [@fadeInOut]="'in'">
+
+    <div class="resume-container__error" *ngIf="resumeError$ | async; else loading">
+      {{ resumeError$ | async | json }}
+    </div>
+
+    <ng-template #loading>
+      <div class="resume-container__loader__spinner">
+        <app-resume-loader></app-resume-loader>
+      </div>
+    </ng-template>
+
+  </div>
+
+</ng-template>

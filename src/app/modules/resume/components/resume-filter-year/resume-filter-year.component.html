@@ -1,0 +1,11 @@
+<section class="resume-filter-year btn-group d-flex" role="group" aria-label="Filter By Year">
+
+  <span class="btn btn-secondary btn-filter text-nowrap w-100">
+    Filter By Year
+  </span>
+
+  <button *ngFor="let year of years" type="button" class="btn w-100" [class.btn-dark]="year === activeYear" [class.btn-secondary]="year !== activeYear" (click)="changeYear.emit(year)" data-test-id="year">
+    {{ year }}
+  </button>
+
+</section>
