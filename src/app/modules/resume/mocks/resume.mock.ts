@@ -5,9 +5,9 @@ export const resume: Resume = {
     name: 'John Doe',
     job_title: 'Web Developer',
     preamble: 'Lorem Ipsum',
-    address_1: "123 Smith St.",
-    address_2: "Toronto, ON, M5M5M5",
-    phone: "111-111-1111",
+    address_1: '123 Smith St.',
+    address_2: 'Toronto, ON, M5M5M5',
+    phone: '111-111-1111',
     mail: 'mail@mail.com',
     image: 'https://example.com/test.jpg',
     social_media: [
