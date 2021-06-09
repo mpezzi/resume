@@ -2,7 +2,9 @@
 
   <div class="resume-introduction__primary">
 
-    <img [src]="introduction.image" [attr.alt]="introduction.name" />
+    <ng-container *ngIf="introduction.image">
+      <img [src]="introduction.image" [attr.alt]="introduction.name" />
+    </ng-container>
 
     <h1 data-test-id="name">
       {{ introduction.name }}
@@ -14,6 +16,22 @@
 
     <p class="resume-introduction__preamble" data-test-id="preamble">
       {{ introduction.preamble }}
+    </p>
+
+    <p class="resume-introduction__address" data-test-id="address" *ngIf="introduction.address_1 || introduction.address_2 || introduction.phone">
+      <ng-container *ngIf="introduction.address_1">
+        <span data-test-id="address_1">{{ introduction.address_1 }}</span>
+        <br />
+      </ng-container>
+      <ng-container *ngIf="introduction.address_2">
+        <span data-test-id="address_2">{{ introduction.address_2 }}</span>
+        <br />
+      </ng-container>
+      <ng-container *ngIf="introduction.phone">
+        <a data-test-id="phone" [attr.href]="'tel:' + introduction.phone">
+          {{ introduction.phone }}
+        </a>
+      </ng-container>
     </p>
 
     <p>

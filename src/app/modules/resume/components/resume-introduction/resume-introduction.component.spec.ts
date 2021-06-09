@@ -28,6 +28,18 @@ describe('ResumeIntroductionComponent', () => {
     expect(spectator.query('[data-test-id="preamble"]'))
       .toHaveText(introduction.preamble);
 
+    expect(spectator.query('[data-test-id="address_1"]'))
+      .toHaveText(introduction.address_1);
+
+    expect(spectator.query('[data-test-id="address_2"]'))
+      .toHaveText(introduction.address_2);
+
+    expect(spectator.query('[data-test-id="phone"]'))
+      .toHaveAttribute('href', 'tel:' + introduction.phone);
+
+    expect(spectator.query('[data-test-id="phone"]'))
+      .toHaveText(introduction.phone);
+
     expect(spectator.query('[data-test-id="mail"]'))
       .toHaveAttribute('href', 'mailto:' + introduction.mail);
 

@@ -14,6 +14,9 @@ export interface Introduction {
   name: string;
   job_title: string;
   preamble: string;
+  address_1?: string;
+  address_2?: string;
+  phone?: string;
   mail: string;
   image: string;
   social_media: SocialMedia[];
