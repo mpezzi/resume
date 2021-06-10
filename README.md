@@ -54,6 +54,9 @@ This project showcases the following libraries:
     "name": "John Doe",
     "job_title": "Web Developer",
     "preamble": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "address_1": "123 Smith St.",
+    "address_2": "Toronto, ON, M5M5M5",
+    "phone": "111-111-1111",
     "mail": "mail@mail.com",
     "image": "https://via.placeholder.com/400",
     "social_media": [
