@@ -20,10 +20,10 @@ describe('ResumeEducationComponent', () => {
   it('should display education', () => {
 
     expect(spectator.query('[data-test-id="title"]'))
-      .toHaveText(education.school);
+      .toHaveText(education.course);
 
     expect(spectator.query('[data-test-id="lead"]'))
-      .toHaveText(`${education.course} / ${education.duration}`);
+      .toHaveText(`${education.school} / ${education.duration}`);
 
     expect(spectator.query('[data-test-id="description"]'))
       .toHaveText(education.description);
