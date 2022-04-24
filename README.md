@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/mpezzi/resume/tree/master.svg?style=svg)](https://circleci.com/gh/mpezzi/resume/tree/master)
+
 # Resume
 
 ## Introduction
