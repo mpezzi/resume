@@ -1,0 +1,32 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7
+  browser-tools: circleci/browser-tools@1.2.5
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:16.10-browsers
+    steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          name: Check install
+          command: |
+            google-chrome --version
+            chromedriver --version
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run lints
+          command: npm run lint
+      - run:
+          name: Run tests
+          command: npm run test
+
+workflows:
+  pipeline:
+    jobs:
+      - test
